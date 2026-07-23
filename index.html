@@ -162,45 +162,6 @@
   .btn.ghost{color:var(--text-primary); background:transparent;}
   .btn.ghost:hover{border-color:var(--teal); color:var(--teal);}
 
-  /* ---------- readiness meter (signature element) ---------- */
-  .meter-card{
-    background:var(--surface);
-    border:1px solid var(--hairline);
-    border-radius:14px;
-    padding:28px 30px;
-    max-width:720px;
-  }
-  .meter-head{
-    display:flex; align-items:baseline; justify-content:space-between;
-    margin-bottom:20px; flex-wrap:wrap; gap:8px;
-  }
-  .meter-head .label{
-    font-family:var(--font-mono); font-size:12px; color:var(--text-faint);
-    letter-spacing:0.08em; text-transform:uppercase;
-  }
-  .meter-score{font-family:var(--font-display); font-size:34px; font-weight:700;}
-  .meter-score .band{
-    font-family:var(--font-mono); font-size:11px; font-weight:600;
-    padding:3px 9px; border-radius:20px; margin-left:10px; vertical-align:middle;
-    background:var(--green-dim); color:var(--green); letter-spacing:0.04em;
-  }
-  .meter-track{
-    width:100%; height:8px; background:var(--surface-2); border-radius:6px; overflow:hidden; margin-bottom:22px;
-  }
-  .meter-fill{
-    height:100%; width:0%; border-radius:6px;
-    background:linear-gradient(90deg, var(--teal), var(--green));
-    transition:width 1.4s cubic-bezier(.16,1,.3,1);
-  }
-  .meter-breakdown{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;
-  }
-  @media (max-width:640px){ .meter-breakdown{grid-template-columns:repeat(2, 1fr);} }
-  .mb-item{}
-  .mb-item .pct{font-family:var(--font-mono); font-size:15px; font-weight:600; color:var(--text-primary);}
-  .mb-item .pct span{color:var(--text-faint); font-weight:400; font-size:12px;}
-  .mb-item .name{font-size:11px; color:var(--text-faint); margin-top:3px; text-transform:uppercase; letter-spacing:0.05em;}
-
   /* ---------- section shell ---------- */
   section{padding:76px 0; border-top:1px solid var(--hairline);}
   .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
@@ -392,20 +353,6 @@
             <span class="loc"><span class="dot"></span> Parsippany, NJ</span>
             <span class="avail">Open</span>
           </div>
-        </div>
-      </div>
-
-      <div class="meter-card reveal">
-        <div class="meter-head">
-          <span class="label">Career readiness score</span>
-          <span class="meter-score">96<span style="font-size:16px;color:var(--text-faint);">/100</span><span class="band">GREEN</span></span>
-        </div>
-        <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
-        <div class="meter-breakdown">
-          <div class="mb-item"><div class="pct">100<span>%</span></div><div class="name">Delivery track record</div></div>
-          <div class="mb-item"><div class="pct">95<span>%</span></div><div class="name">Technical toolkit</div></div>
-          <div class="mb-item"><div class="pct">90<span>%</span></div><div class="name">Cross-func leadership</div></div>
-          <div class="mb-item"><div class="pct">100<span>%</span></div><div class="name">Ready to start</div></div>
         </div>
       </div>
     </header>
@@ -696,13 +643,6 @@
     });
   }, {threshold:0.15});
   revealEls.forEach(el=>io.observe(el));
-
-  // meter fill animation on load
-  window.addEventListener('load', ()=>{
-    requestAnimationFrame(()=>{
-      document.getElementById('meterFill').style.width = '96%';
-    });
-  });
 </script>
 
 </body>
