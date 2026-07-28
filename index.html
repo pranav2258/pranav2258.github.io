@@ -125,6 +125,7 @@
     .points { display: grid; gap: 8px; margin: 17px 0 0; padding: 0; list-style: none; }
     .points li { position: relative; padding-left: 18px; color: var(--muted); font-size: 14px; }
     .points li::before { content: ""; position: absolute; left: 0; top: .68em; width: 6px; height: 1px; background: var(--teal); }
+    .points strong { color: #d9e4ed; font-weight: 600; }
     .metrics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .metric { padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: #c1cfdb; font: 500 10px/1 var(--font-mono); }
     .metric b { color: var(--amber); }
@@ -142,6 +143,20 @@
     .project-links { display: flex; gap: 16px; margin-top: auto; padding-top: 20px; }
     .project-links a { color: var(--teal); text-decoration: none; font: 600 11px/1 var(--font-mono); }
     .project-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .research-card { padding: 24px; border: 1px solid var(--line); border-radius: 13px; background: linear-gradient(145deg, var(--surface), rgba(19,31,46,.62)); }
+    .research-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .research-label { padding: 5px 7px; border-radius: 4px; background: var(--blue-soft); color: var(--blue); font: 600 9px/1 var(--font-mono); letter-spacing: .05em; text-transform: uppercase; }
+    .research-title { font: 600 19px/1.25 var(--font-display); }
+    .research-card .points { margin-top: 17px; }
+    .research-card .points li { font-size: 13px; }
+    .research-more { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .research-more summary { color: var(--teal); cursor: pointer; font: 600 11px/1.3 var(--font-mono); list-style: none; }
+    .research-more summary::-webkit-details-marker { display: none; }
+    .research-more summary::after { content: " +"; }
+    .research-more[open] summary::after { content: " -"; }
+    .research-more .points { margin-top: 14px; }
 
     .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .skill { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
@@ -175,7 +190,7 @@
       .hero { padding: 54px 0 52px; }
       .hero-grid { grid-template-columns: 1fr; }
       .photo-card { grid-row: 1; width: 152px; }
-      .projects-grid, .skills-grid, .education-grid { grid-template-columns: 1fr; }
+      .projects-grid, .research-grid, .skills-grid, .education-grid { grid-template-columns: 1fr; }
       .job-head { display: block; }
       .job-date { display: block; margin-top: 6px; }
       .footer-grid { display: block; }
@@ -201,6 +216,7 @@
       <nav aria-label="Primary navigation">
         <a href="#experience">experience</a>
         <a href="#projects">projects</a>
+        <a href="#research">research</a>
         <a href="#skills">skills</a>
         <a href="#education">education</a>
         <a href="#contact">contact</a>
@@ -271,10 +287,10 @@
           </div>
           <div class="job-org">UPS | Parsippany, NJ</div>
           <ul class="points">
-            <li>Coordinate Product, Engineering, Finance, Sales, and Operations work for Salesforce Deal Manager deployments across 15 countries and 4 U.S. states.</li>
-            <li>Support the IAS-to-Deal Manager migration through workflow mapping, data validation, UAT, defect triage, release readiness, and rollout issue resolution.</li>
-            <li>Use T-SQL, Power BI, Excel, and Python to analyze pricing, billing, operational, ticket, and defect trends and identify root causes.</li>
-            <li>Translate business needs into prioritized requirements, user stories, acceptance criteria, controls, KPI reporting, and operating documentation.</li>
+            <li><strong>Global scope:</strong> 15 countries | 4 U.S. states | Salesforce Deal Manager</li>
+            <li><strong>Migration:</strong> IAS to Deal Manager | workflow mapping | T-SQL validation | UAT | defect triage</li>
+            <li><strong>Commercial intelligence:</strong> pricing | revenue | billing | shipments | disputes | costs</li>
+            <li><strong>Delivery toolkit:</strong> Power BI | Excel | Python | SAP | Salesforce | Azure DevOps</li>
           </ul>
           <div class="metrics">
             <span class="metric">Defects per feature: <b>5 to 1</b></span>
@@ -291,9 +307,9 @@
           </div>
           <div class="job-org">Rutgers Business School | New Brunswick, NJ</div>
           <ul class="points">
-            <li>Delivered applied analytics instruction to 55 students with varied technical backgrounds.</li>
-            <li>Structured schedules, checkpoints, team assignments, and evaluation criteria for 11 project teams.</li>
-            <li>Translated analytical methods into clear business recommendations and stakeholder-ready presentations.</li>
+            <li><strong>Teaching:</strong> 55 learners | applied data analytics | technical-to-business translation</li>
+            <li><strong>Project delivery:</strong> 11 teams | schedules | checkpoints | deliverables | evaluation</li>
+            <li><strong>Communication:</strong> structured feedback | presentation coaching | stakeholder-ready insights</li>
           </ul>
         </article>
 
@@ -304,9 +320,9 @@
           </div>
           <div class="job-org">Rutgers Business School | Accounting Information Systems</div>
           <ul class="points">
-            <li>Supported accounting and financial data research through acquisition, transformation, validation, and analysis.</li>
-            <li>Tracked milestones, blockers, action items, and participant follow-through across research workstreams.</li>
-            <li>Produced documented, stakeholder-ready findings while reducing time-to-analysis by 30%.</li>
+            <li><strong>Research:</strong> accounting and financial datasets | acquisition | transformation | validation</li>
+            <li><strong>Coordination:</strong> milestones | blockers | assumptions | action items | documentation</li>
+            <li><strong>Outcomes:</strong> time-to-analysis -30% | workstream completion 100%</li>
           </ul>
         </article>
       </div>
@@ -383,8 +399,54 @@
       </div>
     </section>
 
+    <section id="research">
+      <div class="section-head"><span class="section-no">04</span><h2>Research blog</h2></div>
+      <div class="research-grid">
+        <article class="research-card reveal">
+          <div class="research-meta"><span class="research-label">Capstone study</span><span class="research-label">Cybersecurity analytics</span></div>
+          <h3 class="research-title">Teaching a Network to Recognize an Attack</h3>
+          <ul class="points">
+            <li><strong>Question:</strong> sequence-aware detection for DoS and DDoS traffic</li>
+            <li><strong>Models:</strong> Deep RNN | DBN | autoencoder | CNN | LSTM</li>
+            <li><strong>Datasets:</strong> CSE-CIC-IDS2018 | CIRA-CIC-DoHBrw-2020</li>
+            <li><strong>Focus:</strong> accuracy | sensitivity | specificity | feature relevance</li>
+          </ul>
+          <details class="research-more">
+            <summary>Open research brief</summary>
+            <ul class="points">
+              <li><strong>Feature selection:</strong> Bayesian information gain | normalized network-flow signals</li>
+              <li><strong>Experiment:</strong> Deep RNN benchmarked against four neural architectures</li>
+              <li><strong>Finding:</strong> strongest attack sensitivity from sequence-aware modeling</li>
+              <li><strong>Next:</strong> broader attack classes | hyperparameter optimization | drift monitoring</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="research-card reveal">
+          <div class="research-meta"><span class="research-label">Applied research</span><span class="research-label">Financial forecasting</span></div>
+          <h3 class="research-title">From Forecast Error to Executive Confidence</h3>
+          <ul class="points">
+            <li><strong>Question:</strong> model selection for reliable planning decisions</li>
+            <li><strong>Methods:</strong> linear regression | random forest | gradient boosting | statistical baselines</li>
+            <li><strong>Validation:</strong> six-month holdout | MAPE comparison | scenario stress testing</li>
+            <li><strong>Result:</strong> 0.92% MAPE | $0 GL-to-revenue reconciliation variance</li>
+          </ul>
+          <details class="research-more">
+            <summary>Open research brief</summary>
+            <ul class="points">
+              <li><strong>Inputs:</strong> SAP-style GL | revenue | OPEX | headcount | operating drivers</li>
+              <li><strong>Controls:</strong> forecast benchmark | reconciliation | assumptions | metric definitions</li>
+              <li><strong>Outputs:</strong> QBR deck | executive workbook | three-year plan | self-service dashboard</li>
+              <li><strong>Decision lens:</strong> accuracy | interpretability | scenario usefulness | leadership clarity</li>
+            </ul>
+          </details>
+          <div class="project-links"><a href="https://github.com/pranav2258/enterprise-fpa-planning-execution" target="_blank" rel="noopener">Research project &#8599;</a></div>
+        </article>
+      </div>
+    </section>
+
     <section id="skills">
-      <div class="section-head"><span class="section-no">04</span><h2>Core capabilities</h2></div>
+      <div class="section-head"><span class="section-no">05</span><h2>Core capabilities</h2></div>
       <div class="skills-grid">
         <article class="skill reveal"><h3>Project delivery</h3><div class="skill-tags"><span class="tag">Project Plans</span><span class="tag">Milestones</span><span class="tag">Dependencies</span><span class="tag">RAID</span><span class="tag">UAT</span><span class="tag">Agile / Scrum</span></div></article>
         <article class="skill reveal"><h3>Financial analysis</h3><div class="skill-tags"><span class="tag">Forecasting</span><span class="tag">Variance Analysis</span><span class="tag">Scenario Planning</span><span class="tag">KPI Reporting</span><span class="tag">Reconciliation</span><span class="tag">Financial Modeling</span></div></article>
@@ -394,7 +456,7 @@
     </section>
 
     <section id="education">
-      <div class="section-head"><span class="section-no">05</span><h2>Education</h2></div>
+      <div class="section-head"><span class="section-no">06</span><h2>Education</h2></div>
       <div class="education-grid">
         <article class="education reveal"><div class="degree">DBA, Information Technology Management</div><div class="school">Westcliff University | California</div></article>
         <article class="education reveal"><div class="degree">M.S., Information Technology &amp; Analytics</div><div class="school">Rutgers Business School | New Jersey</div></article>
